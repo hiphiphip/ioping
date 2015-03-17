@@ -1,5 +1,4 @@
-ioping
-======
+#ioping
 
 An tool to monitor I/O latency in real time.
 It shows disk latency in the same way as ping shows network latency.
@@ -17,7 +16,7 @@ Licensed under GPLv3 (or later) <http://www.gnu.org/licenses/gpl-3.0.txt>
 
 This tool lets you monitor I/O latency in real time. It shows disk latency in the same way as ping shows network latency. 
 
-,,,
+```
 Usage: ioping [-LABCDWRq] [-c count] [-w deadline] [-pP period] [-i interval]
                [-s size] [-S wsize] [-o offset] directory|file|device
         ioping -h | -v
@@ -41,10 +40,10 @@ Usage: ioping [-LABCDWRq] [-c count] [-w deadline] [-pP period] [-i interval]
       -q              suppress human-readable output
       -h              display this message and exit
       -v              display version and exit
-,,,
+```
 
-######man
-,,,
+##man
+```
 
 
 IOPING(1)                        User Commands                       IOPING(1)
@@ -221,20 +220,20 @@ AUTHORS
 
 
                                    Oct 2014                          IOPING(1)
-,,,
+```
 
-######Supported OS
--GNU/Linux
--GNU/HURD
--Windows
--OS X
--FreeBSD
--DragonFlyBSD
--OpenBSD 
+##Supported OS
+- GNU/Linux
+- GNU/HURD
+- Windows
+- OS X
+- FreeBSD
+- DragonFlyBSD
+- OpenBSD 
 
-######Examples
+##Examples
 Show disk I/O latency using the default values and the current directory, until interrupted 
-,,,
+```
 $ ioping .
 4096 bytes from . (ext4 /dev/sda3): request=1 time=0.2 ms
 4096 bytes from . (ext4 /dev/sda3): request=2 time=0.2 ms
@@ -245,24 +244,23 @@ $ ioping .
 --- . (ext4 /dev/sda3) ioping statistics ---
 5 requests completed in 4794.0 ms, 364 iops, 1.4 MiB/s
 min/avg/max/mdev = 0.2/2.8/12.7/5.0 ms
-,,,
+```
 
 Measure disk seek rate (iops, avg) 
-,,,
+```
 $ ioping -R /dev/sda
 
 --- /dev/sda (device 465.8 GiB) ioping statistics ---
 186 requests completed in 3004.6 ms, 62 iops, 0.2 MiB/s
 min/avg/max/mdev = 6.4/16.0/26.8/4.7 ms
-,,,
-
+```
 Measure disk sequential speed (MiB/s) 
-,,,
+```
 $ ioping -RL /dev/sda
 
 --- /dev/sda (device 465.8 GiB) ioping statistics ---
 837 requests completed in 3004.1 ms, 292 iops, 72.9 MiB/s
 min/avg/max/mdev = 2.0/3.4/28.9/2.0 ms
-,,,
+```
 
 
